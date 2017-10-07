@@ -22,7 +22,7 @@ class TabController < ApplicationController
   
   layout 'base'
   
-  before_filter :find_project, :authorize, :only => [:show]
+  before_filter :find_project, :authorize, :only => [:shower]
   
   def show
     @tab_text = Tab.get_tab_text(@project)
@@ -30,7 +30,7 @@ class TabController < ApplicationController
 
   def system_show
     @tab_text = Setting.plugin_redmine_tab['system_tab_text']
-    render :action => 'show'
+    render :action => 'shower'
   end
   
   private

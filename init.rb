@@ -20,7 +20,7 @@ require 'redmine'
 Rails.logger.info 'Starting Tab plugin for Redmine'
 
 Redmine::Plugin.register :redmine_tab do
-  name 'Tab Plugin'
+  name 'Tab 2 Plugin'
   author 'James Turnbull'
   description 'A plugin which adds Redmine tabs to embed content from an iframe on a per-project and system-wide base.'
   version '0.4.0'
@@ -55,7 +55,7 @@ Redmine::Plugin.register :redmine_tab do
   # A new item is added to the project menu
   menu(:project_menu,
        :tab,
-       { :controller => 'tab', :action => 'show' },
+       { :controller => 'tab', :action => 'shower' },
        :caption => Proc.new { string_or_translate.call('tab_name') },
        :if => Proc.new { !Setting.plugin_redmine_tab['tab_name'].blank? })
 
